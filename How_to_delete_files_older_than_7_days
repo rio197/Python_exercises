@@ -6,10 +6,22 @@ import os, time, sys
 path = r"c:\users\%myusername%\downloads"
 now = time.time()
 
-# 1- list those files that are older than 7 days
+################################################
+# 1- List those files that are older than 7 days
+################################################
 for f in os.listdir(path):
   f = os.path.join(path, f)
   
   if os.stat(f).st_mtime < now - 7 * 86400:
     print(f)
-    
+
+###########################################################################################
+# 2- Delete those files that are older than 7 days
+# WARNING: Do not execute this block unless you really want to delete those files!
+###########################################################################################
+for f in os.listdir(path):
+  f = os.path.join(path, f)
+  
+  if os.stat(f).st_mtime < now - 7 * 86400:
+    print("Deleting {}", f)
+    os.remove(f)
