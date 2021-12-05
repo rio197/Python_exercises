@@ -14,7 +14,7 @@ for f in os.listdir(path):
   
   if os.stat(f).st_mtime < now - 7 * 86400:
     if os.path.isfile(f):
-    print(f)
+        print(f)
 
 ###########################################################################################
 # 2- Delete those files that are older than 7 days
@@ -25,5 +25,5 @@ for f in os.listdir(path):
   
   if os.stat(f).st_mtime < now - 7 * 86400:
     if os.path.isfile(f):
-    print("Deleting {}", f)
-    os.remove(f)
+        print("Deleting {}", f)
+        os.remove(f)
