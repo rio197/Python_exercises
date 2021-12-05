@@ -13,6 +13,7 @@ for f in os.listdir(path):
   f = os.path.join(path, f)
   
   if os.stat(f).st_mtime < now - 7 * 86400:
+    if os.path.isfile(f):
     print(f)
 
 ###########################################################################################
@@ -23,5 +24,6 @@ for f in os.listdir(path):
   f = os.path.join(path, f)
   
   if os.stat(f).st_mtime < now - 7 * 86400:
+    if os.path.isfile(f):
     print("Deleting {}", f)
     os.remove(f)
