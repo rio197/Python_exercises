@@ -1,5 +1,6 @@
 # Reference: https://stackoverflow.com/questions/12485666/python-deleting-all-files-in-a-folder-older-than-x-days
 
+#!"C:\Python39\python.exe"
 import os, time, sys
     
 path = r"c:\users\%myusername%\downloads"
