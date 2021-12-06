@@ -10,20 +10,32 @@ now = time.time()
 # 1- List those files that are older than 7 days
 ################################################
 for f in os.listdir(path):
-  f = os.path.join(path, f)
-  
-  if os.stat(f).st_mtime < now - 7 * 86400:
-    if os.path.isfile(f):
-        print(f)
+    f = os.path.join(path, f)
 
-###########################################################################################
+    if os.stat(f).st_mtime < now - 7 * 86400:
+        if os.path.isfile(f):
+            print(f)
+            filelist.append(f)
+
+##################################################################################
 # 2- Delete those files that are older than 7 days
 # WARNING: Do not execute this block unless you really want to delete those files!
-###########################################################################################
-for f in os.listdir(path):
-  f = os.path.join(path, f)
-  
-  if os.stat(f).st_mtime < now - 7 * 86400:
-    if os.path.isfile(f):
-        print("Deleting {}", f)
-        os.remove(f)
+##################################################################################
+if not filelist:
+    print("No files older than 7 days were detected")
+else:
+    while True:
+        try:
+            text = input('\nPress Enter to delete the above files or Ctrl-C to cancel:\n')
+            if text == "":
+                for f in os.listdir(path):
+                    f = os.path.join(path, f)
+
+                    if os.stat(f).st_mtime < now - 7 * 86400:
+                        if os.path.isfile(f):
+                            print("Deleting {}".format(f))
+                            os.remove(f)
+                break
+        except KeyboardInterrupt:
+            print("Cancelled: No files have been deleted")
+            break
