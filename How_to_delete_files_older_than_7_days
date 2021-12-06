@@ -16,20 +16,19 @@ for f in os.listdir(path):
     if os.stat(fullPath).st_mtime < now - 7 * 86400 and os.path.isfile(fullPath):
             fileList.append(fullPath)
 
-if fileList:
-    print("##########################################")
-    print("The following files are older than 7 days:")
-    print("##########################################")
-    for f in fileList:
-        print(f)
-
+if not fileList:
+    print("NOTIFICATION: No files older than 7 days have been detected.")
 ##################################################################################
 # 2- Delete those files that are older than 7 days
 # WARNING: Do not execute this block unless you really want to delete those files!
 ##################################################################################
-if not fileList:
-    print("NOTIFICATION: No files older than 7 days have been detected.")
 else:
+    print("############################################")
+    print("The following file(s) are older than 7 days:")
+    print("############################################")
+    for f in fileList:
+        print(f)
+
     while True:
         try:
             text = input('\nPress Enter to delete the above files or Ctrl-C to cancel:\n')
