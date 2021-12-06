@@ -17,15 +17,17 @@ for f in os.listdir(path):
             fileList.append(fullPath)
 
 if not fileList:
-    print("NOTIFICATION: No files older than 7 days have been detected.")
+    print("##############################################")
+    print("No files older than 7 days have been detected.")
+    print("##############################################")
 ##################################################################################
 # 2- Delete those files that are older than 7 days
 # WARNING: Do not execute this block unless you really want to delete those files!
 ##################################################################################
 else:
-    print("############################################")
-    print("The following file(s) are older than 7 days:")
-    print("############################################")
+    print("##########################################################")
+    print("Found the following file(s) which are older than 7 days:")
+    print("##########################################################")
     for f in fileList:
         print(f)
 
@@ -39,5 +41,7 @@ else:
                         os.remove(f)
                 break
         except KeyboardInterrupt:
+            print("####################################################")
             print("NOTIFICATION: Cancelled. No files have been deleted.")
+            print("####################################################")
             break
