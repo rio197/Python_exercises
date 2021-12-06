@@ -36,9 +36,8 @@ else:
             text = input('\nPress Enter to delete the above files or Ctrl-C to cancel:\n')
             if text == "":
                 for f in fileList:
-                    if os.stat(f).st_mtime < now - 7 * 86400 and os.path.isfile(f):
-                        print("Deleting {}".format(f))
-                        os.remove(f)
+                    print("Deleting {}".format(f))
+                    os.remove(f)
                 break
         except KeyboardInterrupt:
             print("####################################################")
