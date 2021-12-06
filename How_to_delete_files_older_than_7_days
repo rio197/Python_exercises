@@ -13,8 +13,7 @@ filelist = []
 for f in os.listdir(path):
     fullPath = os.path.join(path, f)
 
-    if os.stat(fullPath).st_mtime < now - 7 * 86400:
-        if os.path.isfile(fullPath):
+    if os.stat(fullPath).st_mtime < now - 7 * 86400 and os.path.isfile(fullPath):
             fileList.append(fullPath)
 
 if fileList:
@@ -38,10 +37,9 @@ else:
                 # for f in os.listdir(path):
                 #     f = os.path.join(path, f)
                 for f in fileList:
-                    if os.stat(f).st_mtime < now - 7 * 86400:
-                        if os.path.isfile(f):
-                            print("Deleting {}".format(f))
-                            os.remove(f)
+                    if os.stat(f).st_mtime < now - 7 * 86400 and os.path.isfile(f):
+                        print("Deleting {}".format(f))
+                        os.remove(f)
                 break
         except KeyboardInterrupt:
             print("NOTIFICATION: Cancelled. No files have been deleted.")
