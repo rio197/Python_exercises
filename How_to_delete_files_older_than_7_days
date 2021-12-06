@@ -5,6 +5,7 @@ import os, time, sys
     
 path = r"c:\users\%myusername%\downloads"
 now = time.time()
+filelist = []
 
 ################################################
 # 1- List those files that are older than 7 days
