@@ -25,9 +25,9 @@ if not fileList:
 # WARNING: Do not execute this block unless you really want to delete those files!
 ##################################################################################
 else:
-    print("##########################################################")
-    print("Found the following file(s) which are older than 7 days:")
-    print("##########################################################")
+    print("############################################")
+    print("The following file(s) are older than 7 days:")
+    print("############################################")
     for f in fileList:
         print(f)
 
