@@ -28,7 +28,7 @@ if fileList:
 # WARNING: Do not execute this block unless you really want to delete those files!
 ##################################################################################
 if not fileList:
-    print("NOTIFICATION: No files older than 7 days were detected")
+    print("NOTIFICATION: No files older than 7 days have been detected.")
 else:
     while True:
         try:
