@@ -13,7 +13,6 @@ filelist = []
 ################################################
 for f in os.listdir(path):
     fullPath = os.path.join(path, f)
-
     if os.stat(fullPath).st_mtime < now - 7 * 86400 and os.path.isfile(fullPath):
             fileList.append(fullPath)
 
