@@ -4,7 +4,7 @@
 import os
 import time
     
-path = r"c:\users\%myusername%\downloads"
+path = r"c:\users\%USERNAME%\downloads"
 now = time.time()
 filelist = []
 
