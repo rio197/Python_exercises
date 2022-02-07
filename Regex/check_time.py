@@ -3,7 +3,7 @@
 
 import re
 def check_time(text):
-  pattern = r"^(([0-9]|1[0-2]):([0-5][0-9])) ?(am|AM|pm|PM)$"
+  pattern = r"(([0-9]|1[0-2]):([0-5][0-9])) ?am|AM|pm|PM"
   result = re.search(pattern, text)
   return result != None
 
