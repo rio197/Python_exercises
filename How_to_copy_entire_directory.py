@@ -1,10 +1,14 @@
 import os
 import shutil
 
-source_dir = r"C:\Users\%USERNAME%\Downloads\testfolder"
-destination_dir = r"C:\Users\%USERNAME%\Downloads\test\testfolder"
+def main():
+        source_dir = r"C:\Users\%USERNAME%\Downloads\testfolder"
+        destination_dir = r"C:\Users\%USERNAME%\Downloads\test\testfolder"
+        copy_entire_directory(source_dir,destination_dir)
 
-if os.path.exists(destination_dir):
-        shutil.rmtree(destination_dir)
+def copy_entire_directory(source,destination):
+        if os.path.exists(source):
+                shutil.rmtree(destination)
+        shutil.copytree(source, destination)
 
-shutil.copytree(source_dir, destination_dir)
+main()
