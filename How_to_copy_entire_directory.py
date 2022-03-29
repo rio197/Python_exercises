@@ -9,6 +9,7 @@ def main():
 def copy_entire_directory(source,destination):
         if os.path.exists(source):
                 shutil.rmtree(destination)
+                print("Deleted: {}".format(destination)
         shutil.copytree(source, destination)
 
 main()
