@@ -11,5 +11,6 @@ def copy_entire_directory(source,destination):
                 shutil.rmtree(destination)
                 print("Deleted: {}".format(destination)
         shutil.copytree(source, destination)
+        print("Replaced: {}".format(destination)
 
 main()
