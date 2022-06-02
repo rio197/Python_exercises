@@ -2,6 +2,7 @@ import os
 import shutil
 
 def main():
+        # Repeat this block as necessary
         source_dir = r"C:\Users\%USERNAME%\Downloads\testfolder"
         destination_dir = r"C:\Users\%USERNAME%\Downloads\test\testfolder"
         copy_entire_directory(source_dir,destination_dir)
